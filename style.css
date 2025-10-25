@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container {
+    padding: 50px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px grey;
+    flex-shrink: 1;
+}
+.container div {
+    display: flex;
+    gap: 12px;
+}
+.row   {
+    flex-direction: column;
+}
+.end {
+    align-self: flex-end;
+}
+
+#display {
+    font-size: large;
+    width: 320px;
+    padding: 12px 8px;
+    border: 1px solid;
+    border-color: #999999;
+    border-radius: 4px;
+}
+button {
+    font-family: inherit;
+    font-size: larger;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px grey;
+    background-color: #eeeeee;
+    border: none;
+    transition: 0.15s;
+}
+.blue-button {
+    color: #184e77;
+}
+.blue-button:hover {
+    background-color: #184e77;
+    color: #eeeeee;
+}
+#equal-sign {
+    color: #f48c06;
+}
+#equal-sign:hover {
+    background-color: #f48c06;
+    color: #eeeeee;
+}
+.operator {
+    color: #c9184a;
+    transition: 0.15s;
+}
+.operator:hover {
+    background-color: #c9184a;
+    color: #eeeeee;
+}
+.clear {
+    color: #6f1d1b;
+    transition: 0.15s;
+}
+.clear:hover {
+    background-color: #6f1d1b;
+    color: #eeeeee;
+}
