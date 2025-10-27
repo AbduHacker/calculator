@@ -4,7 +4,7 @@ function showNumbers() {
         if (target.classList.contains("blue-button")) {
             screen.value += target.textContent;
             if (!(expression.operator)) expression.operand1 = screen.value;
-            else if (expression.operator) expression.operand2 = screen.value;
+            else if (expression.operator) expression.operand2 = (screen.value) ? screen.value : "empty";
         }
     });
 }
@@ -34,6 +34,13 @@ function calculate() {
     let operand1 = expression.operand1;
     let operand2 = expression.operand2;
     let operator = expression.operator;
+    if (+operand2 === 0) {
+                expression.evaluated = "Cannot divide by 0";
+                return;
+    } else if (operand2 === "empty") {
+        expression.evaluated = "There isn't a second operand";
+        return;
+    }
     switch (operator) {
         case "+":
             expression.evaluated = (+operand1) + (+operand2);
@@ -45,10 +52,6 @@ function calculate() {
             expression.evaluated = (+operand1) * (+operand2);
             break;
         case "÷":
-            if (+operand2 === 0) {
-                expression.evaluated = "Error";
-                return;
-            }
             expression.evaluated = (+operand1) / (+operand2);
             break;
     }
