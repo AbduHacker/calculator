@@ -35,11 +35,8 @@ function calculate() {
     let operand2 = expression.operand2;
     let operator = expression.operator;
     if (+operand2 === 0) {
-                expression.evaluated = "Cannot divide by 0";
+                expression.evaluated = "Error";
                 return;
-    } else if (operand2 === "empty") {
-        expression.evaluated = "There isn't a second operand";
-        return;
     }
     switch (operator) {
         case "+":
