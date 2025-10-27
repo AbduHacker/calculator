@@ -1,29 +1,55 @@
-let buttonsDiv = document.querySelector(".buttons");
-let screen = document.querySelector("#display");
-function showNumbers(buttons, output) {
-    buttons.addEventListener("click", (e) => {
+function showNumbers() {
+    buttonsDiv.addEventListener("click", (e) => {
         target = e.target;
-        if (target.classList.contains("blue-button")) output.value += target.textContent;
+        if (target.classList.contains("blue-button")) screen.value += target.textContent;
     });
 }
-function clearNumber(buttons ,output) {
+function clearNumber() {
     buttons.addEventListener("click", (e) => {
         let target = e.target;
         if (target.id === "clear") {
-            let text = output.value;
+            let text = screen.value;
             output.value = text.slice(0, -1);
         };
     });
 }
-function clearAll(buttons, output) {
-    buttons.addEventListener("click", (e) => {
+function clearAll() {
+    buttonsDiv.addEventListener("click", (e) => {
         let target = e.target;
         if (target.id === "clear-all") {
-            output.value = "";
+            screen.value = "";
         }
     });
 
 }
-showNumbers(buttonsDiv, screen);
-clearNumber(buttonsDiv, screen);
-clearAll(buttonsDiv, screen);
+
+function calculate() {
+    let operand1 = expression.operand1;
+    let operand2 = expression.operand2;
+    let operator = expression.operator;
+    switch (operator) {
+        case "+":
+            expression.evaluated = +operand1 + +operand2;
+            break;
+        case "-":
+            expression.evaluated = +operand1 + +operand2;
+            break;
+        case "×":
+            expression.evaluated = +operand1 * +operand2;
+            break;
+        case "÷":
+            expression.evaluated = +operand1 / +operand2;
+            break;
+    }
+}
+let buttonsDiv = document.querySelector(".buttons");
+let screen = document.querySelector("#display");
+let expression = {
+    operand1 : "",
+    operator : "",
+    operand2 : "",
+    evaluated : "",
+}
+showNumbers();
+clearNumber();
+clearAll();
